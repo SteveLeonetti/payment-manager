@@ -1,14 +1,16 @@
 package paymentManager;
 
-import java.util.Set;
+import java.util.HashSet;
 
 public class Worker extends Person
 {
     private int workID;
     private double rate;
-    private Set<Client> clientSet;
+    private HashSet<Client> clientSet;
 
-    public Worker(String _name, int _workID, double _rate, Set<Client> _clientSet)
+
+    //region Inheritance
+    public Worker(String _name, int _workID, double _rate, HashSet<Client> _clientSet)
     {
         super(_name);
         setWorkID(_workID);
@@ -21,8 +23,19 @@ public class Worker extends Person
         super(_name);
         setWorkID(_workID);
         setRate(_rate);
+        clientSet = new HashSet<>();
     }
+    //endregion
 
+    /**
+     * Adds a client to the worker's client set
+     * @param client
+     */
+    public void addClient(Client client)
+    {
+        clientSet.add(client);
+        client.setWorker(this);
+    }
     //region Encapsulation
     public int getWorkID() {
         return workID;
@@ -32,11 +45,11 @@ public class Worker extends Person
         this.workID = workID;
     }
 
-    public Set<Client> getClientSet() {
+    public HashSet<Client> getClientSet() {
         return clientSet;
     }
 
-    public void setClientSet(Set<Client> clientSet) {
+    public void setClientSet(HashSet<Client> clientSet) {
         this.clientSet = clientSet;
     }
 
