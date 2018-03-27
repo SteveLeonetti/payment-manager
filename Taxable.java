@@ -6,5 +6,7 @@ package paymentManager;
 
 public interface Taxable
 {
+    //region Fields
     double rate = 0.06625;
+    //endregion
 }

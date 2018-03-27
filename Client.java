@@ -1,9 +1,16 @@
 package paymentManager;
 
+/**
+ * Client.  Stores information about the client of the worker.
+ */
+
 public class Client extends Person
 {
+    //region Fields
     private Worker worker;
+    //endregion
 
+    //region Inheritance
     public Client(String _name, Worker _worker)
     {
         super(_name);
@@ -15,8 +22,9 @@ public class Client extends Person
     {
         super(_name);
     }
+    //endregion
 
-    /* Encapsulation */
+    //region Encapsulation
     public Worker getWorker() {
         return worker;
     }
@@ -24,4 +32,5 @@ public class Client extends Person
     public void setWorker(Worker _worker) {
         this.worker = _worker;
     }
+    //endregion
 }

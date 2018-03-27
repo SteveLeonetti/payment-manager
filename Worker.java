@@ -2,12 +2,17 @@ package paymentManager;
 
 import java.util.HashSet;
 
+/**
+ * Worker.  Stores all information about the worker.
+ */
+
 public class Worker extends Person
 {
+    //region Fields
     private int workID;
     private double rate;
     private HashSet<Client> clientSet;
-
+    //endregion
 
     //region Inheritance
     public Worker(String _name, int _workID, double _rate, HashSet<Client> _clientSet)
@@ -27,6 +32,7 @@ public class Worker extends Person
     }
     //endregion
 
+    //region Insertion
     /**
      * Adds a client to the worker's client set
      * @param client
@@ -36,6 +42,8 @@ public class Worker extends Person
         clientSet.add(client);
         client.setWorker(this);
     }
+    //endregion
+
     //region Encapsulation
     public int getWorkID() {
         return workID;
