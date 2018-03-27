@@ -6,9 +6,11 @@ package paymentManager;
 
 public class Service
 {
+    //region Fields
     private Worker worker;
     private Client client;
     private double travel;
+    //endregion
 
     //region Superclass
     public Service(Worker _worker, Client _client, double _travel)

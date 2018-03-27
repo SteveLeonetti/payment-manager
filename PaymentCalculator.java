@@ -1,8 +1,7 @@
 package paymentManager;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Currency;
+import java.util.HashSet;
 
 /**
  * Payment Calculator.  Handles calculation of prices of single or multiple service bills.
@@ -17,10 +16,10 @@ public abstract class PaymentCalculator
      * @param service
      * @return total cost
      */
-    public double tallyCost(Service service)
+    public static String tallyCost(Service service)
     {
         double totalCost = (service instanceof Taxable ? service.getCost() * Taxable.rate : service.getCost());
-        return Double.parseDouble(NumberFormat.getCurrencyInstance().format(totalCost));
+        return NumberFormat.getCurrencyInstance().format(totalCost);
     }
 
     /**
@@ -28,7 +27,7 @@ public abstract class PaymentCalculator
      * @param services
      * @return total cost
      */
-    public double tallyCost(ArrayList<Service> services)
+    public static String tallyCost(HashSet<Service> services)
     {
         double totalCost = 0;
 
@@ -37,7 +36,7 @@ public abstract class PaymentCalculator
             totalCost += (service instanceof Taxable ? service.getCost() * Taxable.rate : service.getCost());
         }
 
-        return Double.parseDouble(NumberFormat.getCurrencyInstance().format(totalCost));
+        return NumberFormat.getCurrencyInstance().format(totalCost);
     }
     //endregion
 }
