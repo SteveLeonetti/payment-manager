@@ -17,6 +17,11 @@ public class Service
         setTravel(_travel);
     }
 
+    public double getCost()
+    {
+        return 0;
+    }
+
     //region Encapsulation
     public Worker getWorker() {
         return worker;
