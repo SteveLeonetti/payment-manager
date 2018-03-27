@@ -19,8 +19,8 @@ public class MowLawn extends Service implements Taxable
     //region Overriding
     public double getCost()
     {
-        // Every acre takes 3 hours to finish
-        return 3 * acres * getWorker().getRate();
+        // Every acre takes 3 hours to finish.  18 miles/gal, $2.67 per gallon.
+        return 3 * acres * getWorker().getRate() + (getTravel() / 18 * 2.67);
     }
     //endregion
 

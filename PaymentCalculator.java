@@ -20,7 +20,7 @@ public abstract class PaymentCalculator
     public double tallyCost(Service service)
     {
         double totalCost = (service instanceof Taxable ? service.getCost() * Taxable.rate : service.getCost());
-        return totalCost;
+        return Double.parseDouble(NumberFormat.getCurrencyInstance().format(totalCost));
     }
 
     /**

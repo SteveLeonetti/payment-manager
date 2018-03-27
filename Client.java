@@ -8,6 +8,7 @@ public class Client extends Person
     {
         super(_name);
         worker = _worker;
+        worker.addClient(this);
     }
 
     public Client(String _name)
