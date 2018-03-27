@@ -16,6 +16,13 @@ public class MowLawn extends Service implements Taxable
     }
     //endregion
 
+    //region Overriding
+    public double getCost()
+    {
+
+    }
+    //endregion
+
     //region Encapsulation
     public double getAcres() {
         return acres;
