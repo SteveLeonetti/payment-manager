@@ -6,7 +6,9 @@ package paymentManager;
 
 public class Person
 {
+    //region Fields
     private String name;
+    //endregion
 
     //region Superclass
     public Person(String _name)

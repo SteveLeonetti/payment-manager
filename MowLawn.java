@@ -4,9 +4,11 @@ package paymentManager;
  * Mow Lawn.  Contains all data needed for calculation of service cost, except the worker's standard rate.
  */
 
-public class MowLawn extends Service implements Taxable
+public class MowLawn extends Service
 {
+    //region Fields
     private double acres;
+    //endregion
 
     //region Inheritance
     public MowLawn(Worker _worker, Client _client, double _travel, double _acres)
@@ -17,6 +19,10 @@ public class MowLawn extends Service implements Taxable
     //endregion
 
     //region Overriding
+    /**
+     * Calculates the expected cost of the job
+     * @return cost
+     */
     public double getCost()
     {
         // Every acre takes 3 hours to finish.  18 miles/gal, $2.67 per gallon.
