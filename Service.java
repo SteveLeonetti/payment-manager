@@ -10,17 +10,21 @@ public class Service
     private Client client;
     private double travel;
 
+    //region Superclass
     public Service(Worker _worker, Client _client, double _travel)
     {
         setWorker(_worker);
         setClient(_client);
         setTravel(_travel);
     }
+    //endregion
 
+    //region Unused parent method (it's been overridden)
     public double getCost()
     {
         return 0;
     }
+    //endregion
 
     //region Encapsulation
     public Worker getWorker() {

@@ -8,12 +8,20 @@ public class PowerWash extends Service implements Taxable
 {
     private double area;
 
-    //region Construction
+    //region Inheritance
     public PowerWash(Worker _worker, Client _client, double _travel, double _area)
     {
         super(_worker, _client, _travel);
         setArea(_area);
         setTravel(_travel);
+    }
+    //endregion
+
+    //region Overriding
+    public double tallyCost()
+    {
+        // Every square foot takes 30 seconds to finish.
+        return (area / 120) * getWorker().getRate();
     }
     //endregion
 

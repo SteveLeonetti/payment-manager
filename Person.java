@@ -8,8 +8,10 @@ public class Person
 {
     private String name;
 
+    //region Superclass
     public Person(String _name)
     {
         name = _name;
     }
+    //endregion
 }

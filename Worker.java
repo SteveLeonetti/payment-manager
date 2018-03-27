@@ -8,6 +8,7 @@ public class Worker extends Person
     private double rate;
     private Set<Client> clientSet;
 
+    //region Inheritance
     public Worker(String _name, int _workID, double _rate, Set<Client> _clientSet)
     {
         super(_name);
@@ -22,6 +23,7 @@ public class Worker extends Person
         setWorkID(_workID);
         setRate(_rate);
     }
+    //endregion
 
     //region Encapsulation
     public int getWorkID() {

@@ -8,7 +8,7 @@ public class MowLawn extends Service implements Taxable
 {
     private double acres;
 
-    //region Construction
+    //region Inheritance
     public MowLawn(Worker _worker, Client _client, double _travel, double _acres)
     {
         super(_worker, _client, _travel);
@@ -19,7 +19,8 @@ public class MowLawn extends Service implements Taxable
     //region Overriding
     public double getCost()
     {
-
+        // Every acre takes 3 hours to finish
+        return 3 * acres * getWorker().getRate();
     }
     //endregion
 
