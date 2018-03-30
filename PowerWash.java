@@ -31,6 +31,13 @@ public class PowerWash extends Service implements Taxable
     }
     //endregion
 
+    //region Overriding
+    public String toString()
+    {
+        return "--Power Washing--\nWorker: " + this.getWorker() + "\nClient: " + this.getClient() + "\nTravel: " + this.getTravel() + "\nArea: " + this.area + "\n";
+    }
+    //endregion
+
     //region Encapsulation
     public double getArea() {
         return area;

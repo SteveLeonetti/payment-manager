@@ -32,6 +32,13 @@ public class Worker extends Person
     }
     //endregion
 
+    //region Overriding
+    public String toString()
+    {
+        return this.getName();
+    }
+    //endregion
+
     //region Insertion
     /**
      * Adds a client to the worker's client set
