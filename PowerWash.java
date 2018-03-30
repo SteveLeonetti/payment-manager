@@ -6,7 +6,9 @@ package paymentManager;
 
 public class PowerWash extends Service implements Taxable
 {
+    //region Fields
     private double area;
+    //endregion
 
     //region Construction
     public PowerWash(Worker _worker, Client _client, double _travel, double _area)
@@ -26,6 +28,13 @@ public class PowerWash extends Service implements Taxable
     {
         // Every square foot takes 30 seconds to finish. 18 miles per gallon, $2.67 per gallon.
         return (area / 120.0) * getWorker().getRate() + (getTravel() / 18 * 2.67);
+    }
+    //endregion
+
+    //region Overriding
+    public String toString()
+    {
+        return "--Power Washing--\nWorker: " + this.getWorker() + "\nClient: " + this.getClient() + "\nTravel: " + this.getTravel() + "\nArea: " + this.area + "\n";
     }
     //endregion
 

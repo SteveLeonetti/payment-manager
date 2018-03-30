@@ -18,8 +18,13 @@ public abstract class PaymentCalculator
      */
     public static String tallyCost(Service service)
     {
-        double totalCost = (service instanceof Taxable ? service.getCost() * Taxable.rate : service.getCost());
-        return NumberFormat.getCurrencyInstance().format(totalCost);
+        double cost = service.getCost();
+        double tax = (service instanceof Taxable ? service.getCost() * Taxable.rate : 0);
+        double total = cost + tax;
+
+        return "Cost: " + NumberFormat.getCurrencyInstance().format(cost)
+                + " || Tax: " + NumberFormat.getCurrencyInstance().format(tax)
+                + " || Total: " + NumberFormat.getCurrencyInstance().format(total);
     }
 
     /**
@@ -29,14 +34,16 @@ public abstract class PaymentCalculator
      */
     public static String tallyCost(HashSet<Service> services)
     {
+        String costString = "";
         double totalCost = 0;
 
         for (Service service : services)
         {
-            totalCost += (service instanceof Taxable ? service.getCost() * Taxable.rate : service.getCost());
+            costString += service.toString() + tallyCost(service) + "\n\n";
+            totalCost += (service instanceof Taxable ? service.getCost() + service.getCost() * Taxable.rate : service.getCost());
         }
 
-        return NumberFormat.getCurrencyInstance().format(totalCost);
+        return costString + "\n" + " **TOTAL COST: " + NumberFormat.getCurrencyInstance().format(totalCost) + "**";
     }
     //endregion
 }

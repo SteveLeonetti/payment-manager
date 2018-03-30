@@ -26,9 +26,15 @@ public class MowLawn extends Service
     public double getCost()
     {
         // Every acre takes 3 hours to finish.  18 miles/gal, $2.67 per gallon.
-        return 3 * acres * getWorker().getRate() + (getTravel() / 18 * 2.67);
+        return 4 * acres * getWorker().getRate() + (getTravel() / 18 * 2.67);
+    }
+
+    public String toString()
+    {
+        return "--Lawn Mowing--\nWorker: " + this.getWorker() + "\nClient: " + this.getClient() + "\nTravel: " + this.getTravel() + "\nAcres: " + this.acres + "\n";
     }
     //endregion
+
 
     //region Encapsulation
     public double getAcres() {
