@@ -6,7 +6,9 @@ package paymentManager;
 
 public class PowerWash extends Service implements Taxable
 {
+    //region Fields
     private double area;
+    //endregion
 
     //region Construction
     public PowerWash(Worker _worker, Client _client, double _travel, double _area)
