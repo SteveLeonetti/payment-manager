@@ -13,7 +13,17 @@ public class Person
     //region Superclass
     public Person(String _name)
     {
-        name = _name;
+        setName(_name);
+    }
+    //endregion
+
+    //region Encapsulation
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     //endregion
 }
